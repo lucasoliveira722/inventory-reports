@@ -9,12 +9,13 @@ class SimpleReport:
     # Data de validade mais próxima: YYYY-MM-DD
     # Empresa com mais produtos: NOME DA EMPRESA
 
-    @staticmethod
-    def generate(list):
+    @classmethod
+    def generate(cls, list):
         companies_names = []
         oldest_fabrication_date = []
         closest_expiration_date = []
         # https://stackabuse.com/how-to-format-dates-in-python/
+        # https://www.delftstack.com/howto/python/python-counter-most-common/
         today = date.today().strftime("%Y-%m-%d")
         for item in list:
             # primeiro: empresa com mais produtos
